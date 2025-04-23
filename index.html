@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="no">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FiveM Scripts - Profesjonell Skriptsalg</title>
+    <title>FiveM Scripts - Professional Script Marketplace</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,14 +11,13 @@
     <header>
         <div class="container">
             <div class="logo">
-                <h1>FiveM Skripter</h1>
-                <p>Profesjonelle skript for din FiveM server</p>
+                <img src="logo.png" alt="Logo" id="logo">
             </div>
             <nav>
                 <ul>
-                    <li><a href="#home">Hjem</a></li>
-                    <li><a href="#scripts">Skripter</a></li>
-                    <li><a href="#contact">Kontakt</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#scripts">Scripts</a></li>
+                    <li><a href="#contact" class="btn">Contact Us</a></li>
                 </ul>
             </nav>
         </div>
@@ -27,49 +26,58 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
-            <h2>Få tilgang til de beste FiveM-skriptene</h2>
-            <p>Utforsk vårt brede utvalg av skript for å forbedre din FiveM-server.</p>
-            <a href="#scripts" class="btn">Utforsk Skriptene</a>
+            <h2>Get access to the best FiveM scripts</h2>
+            <p>Explore our wide range of scripts to improve your FiveM server.</p>
+            <a href="#scripts" class="btn">Explore Scripts</a>
         </div>
     </section>
 
     <!-- Scripts Section -->
     <section id="scripts" class="scripts">
         <div class="container">
-            <h2>Våre Skripter</h2>
-            <div class="script-list">
-                <div class="script-card">
-                    <img src="script1.jpg" alt="Script 1">
-                    <h3>Custom Car Dealership</h3>
-                    <p>En fullstendig fungerende bilforhandler for din server.</p>
-                    <a href="#" class="btn">Kjøp Nå</a>
-                </div>
-                <div class="script-card">
-                    <img src="script2.jpg" alt="Script 2">
-                    <h3>Roleplay Jobs</h3>
-                    <p>Legg til spennende jobber og roller for spillerne dine.</p>
-                    <a href="#" class="btn">Kjøp Nå</a>
-                </div>
-                <div class="script-card">
-                    <img src="script3.jpg" alt="Script 3">
-                    <h3>Server Management</h3>
-                    <p>Effektive verktøy for å administrere serveren din.</p>
-                    <a href="#" class="btn">Kjøp Nå</a>
-                </div>
+            <h2>Our Scripts</h2>
+            <div class="categories">
+                <div class="category" onclick="showCategory('cars')">Cars</div>
+                <div class="category" onclick="showCategory('mlo')">MLOs</div>
+                <div class="category" onclick="showCategory('scripts')">Scripts</div>
+                <div class="category" onclick="showCategory('clothes')">Clothes</div>
             </div>
+
+            <div id="script-list">
+                <!-- Scripts will dynamically load here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Post Section (Visible only for users with correct identifier) -->
+    <section id="post-script" class="post-script hidden">
+        <div class="container">
+            <h2>Post Your Script</h2>
+            <form id="post-form">
+                <input type="text" name="price" placeholder="Price" required>
+                <input type="text" name="description" placeholder="Description" required>
+                <select name="category" required>
+                    <option value="cars">Cars</option>
+                    <option value="mlo">MLOs</option>
+                    <option value="scripts">Scripts</option>
+                    <option value="clothes">Clothes</option>
+                </select>
+                <input type="file" name="image" required>
+                <input type="file" name="file" required>
+                <button type="submit" class="btn">Post Script</button>
+            </form>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2>Kontakt Oss</h2>
-            <p>Har du spørsmål eller trenger hjelp? Kontakt oss direkte!</p>
-            <form action="submit_form.php" method="POST">
-                <input type="text" name="name" placeholder="Navn" required>
-                <input type="email" name="email" placeholder="E-post" required>
-                <textarea name="message" placeholder="Din melding" required></textarea>
-                <button type="submit" class="btn">Send Melding</button>
+            <h2>Contact Us</h2>
+            <form id="contact-form">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="message" placeholder="Your message" required></textarea>
+                <button type="submit" class="btn">Send Message</button>
             </form>
         </div>
     </section>
@@ -77,10 +85,11 @@
     <!-- Footer Section -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 FiveM Skripter. Alle rettigheter forbeholdt.</p>
+            <p>&copy; 2025 FiveM Scripts. All rights reserved.</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
 </html>
+
