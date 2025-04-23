@@ -1,1 +1,1 @@
-console.log('FjordModz site loaded');
+console.log("FjordModz site is loaded successfully!");
