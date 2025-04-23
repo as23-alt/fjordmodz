@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Mock for å simulere innlogging
+    // Mock for å simulere innlogging (brukerens cfx.re identifier)
     const currentIdentifier = 'abc123';  // Denne ID-en skal settes fra autentisering via cfx.re
 
     // Les inn autoriserte identifikatorer fra filen
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
         categoryDiv.addEventListener('click', () => showCategory(category));
         categoriesBox.appendChild(categoryDiv);
 
-        // Legg til et tomt innlegg i kategorien for å starte med
+        // Legg til en container for innleggene under kategoriene
         let scriptList = document.createElement('div');
         scriptList.id = `category-${category}`;
         scriptList.classList.add('script-list');
@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const postTitle = document.getElementById('post-title').value;
         const postDescription = document.getElementById('post-description').value;
         const postPrice = document.getElementById('post-price').value;
+        const postImageUrl = document.getElementById('post-image-url').value;
 
         // Lag et nytt innlegg og vis det i riktig kategori
         const postElement = document.createElement('div');
@@ -50,7 +51,8 @@ document.addEventListener('DOMContentLoaded', function() {
             <h3>${postTitle}</h3>
             <p>${postDescription}</p>
             <p>Price: $${postPrice}</p>
-            <button class="buy-btn">Buy Now</button>
+            <img src="${postImageUrl}" alt="Image" style="max-width: 100px;">
+            <button class="buy-btn" onclick="window.location.href='https://discord.gg/VCdPuqbZdQ'">Buy Now</button>
         `;
 
         // Finn kategorien og vis innlegget der
@@ -69,14 +71,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Vis kategorier
     function showCategory(category) {
-        const scripts = document.getElementById('script-list');
         const categoryElement = document.querySelector(`#category-${category}`);
-        
+        const scripts = document.getElementById('scripts-list');
+
         if (categoryElement && categoryElement.children.length === 0) {
-            scripts.innerHTML = `<h3>No scripts posted yet in this category.</h3>`;
+            scripts.innerHTML = `<h3>This category is empty.</h3>`;
         } else {
             scripts.innerHTML = `<h3>Scripts in ${category}</h3>`;
             scripts.appendChild(categoryElement);
         }
     }
 });
+
