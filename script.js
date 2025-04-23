@@ -25,6 +25,13 @@ document.addEventListener('DOMContentLoaded', function() {
         categoryDiv.innerHTML = `<p>${category}</p>`;
         categoryDiv.addEventListener('click', () => showCategory(category));
         categoriesBox.appendChild(categoryDiv);
+
+        // Legg til et tomt innlegg i kategorien for å starte med
+        let scriptList = document.createElement('div');
+        scriptList.id = `category-${category}`;
+        scriptList.classList.add('script-list');
+        scriptList.innerHTML = `<p>This category is empty.</p>`;
+        document.getElementById('scripts-list').appendChild(scriptList);
     });
 
     // Når et innlegg er sendt
@@ -46,9 +53,14 @@ document.addEventListener('DOMContentLoaded', function() {
             <button class="buy-btn">Buy Now</button>
         `;
 
-        // Legg til innlegget under valgt kategori
+        // Finn kategorien og vis innlegget der
         let categoryElement = document.querySelector(`#category-${postCategory}`);
         if (categoryElement) {
+            // Fjern "This category is empty"-meldingen hvis noen har postet
+            const emptyMessage = categoryElement.querySelector('p');
+            if (emptyMessage) {
+                categoryElement.removeChild(emptyMessage);
+            }
             categoryElement.appendChild(postElement);
         }
 
@@ -58,6 +70,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // Vis kategorier
     function showCategory(category) {
         const scripts = document.getElementById('script-list');
-        scripts.innerHTML = `<h3>Scripts in ${category}</h3><p>List of scripts for ${category} will appear here.</p>`;
+        const categoryElement = document.querySelector(`#category-${category}`);
+        
+        if (categoryElement && categoryElement.children.length === 0) {
+            scripts.innerHTML = `<h3>No scripts posted yet in this category.</h3>`;
+        } else {
+            scripts.innerHTML = `<h3>Scripts in ${category}</h3>`;
+            scripts.appendChild(categoryElement);
+        }
     }
 });
