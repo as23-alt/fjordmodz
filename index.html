@@ -36,20 +36,26 @@
     <section id="scripts" class="scripts">
         <div class="container">
             <h2>Our Scripts</h2>
-            <div class="categories">
-                <div class="category" onclick="showCategory('cars')">Cars</div>
-                <div class="category" onclick="showCategory('mlo')">MLOs</div>
-                <div class="category" onclick="showCategory('scripts')">Scripts</div>
-                <div class="category" onclick="showCategory('clothes')">Clothes</div>
+
+            <!-- Categories Box -->
+            <div class="categories-box">
+                <h3>Categories</h3>
+                <div class="categories">
+                    <div class="category" onclick="showCategory('cars')">Cars</div>
+                    <div class="category" onclick="showCategory('mlo')">MLOs</div>
+                    <div class="category" onclick="showCategory('scripts')">Scripts</div>
+                    <div class="category" onclick="showCategory('clothes')">Clothes</div>
+                </div>
             </div>
 
+            <!-- Script List -->
             <div id="script-list">
                 <!-- Scripts will dynamically load here -->
             </div>
         </div>
     </section>
 
-    <!-- Post Section (Visible only for users with correct identifier) -->
+    <!-- Post Script Section (Visible only for users with accepted cfx.re identifier) -->
     <section id="post-script" class="post-script hidden">
         <div class="container">
             <h2>Post Your Script</h2>
@@ -92,4 +98,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
