@@ -3,96 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FiveM Scripts - Professional Script Marketplace</title>
+    <title>FiveM Script Store</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Header Section -->
     <header>
-        <div class="container">
-            <div class="logo">
-                <img src="logo.png" alt="Logo" id="logo">
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#scripts">Scripts</a></li>
-                    <li><a href="#contact" class="btn">Contact Us</a></li>
-                </ul>
-            </nav>
-        </div>
+        <div class="logo"><img src="logo.png" alt="Logo"></div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Scripts</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <h2>Get access to the best FiveM scripts</h2>
-            <p>Explore our wide range of scripts to improve your FiveM server.</p>
-            <a href="#scripts" class="btn">Explore Scripts</a>
+    <section class="hero">
+        <h2>Welcome to the FiveM Script Store</h2>
+        <p>Browse and buy scripts for your FiveM server!</p>
+        <a href="#scripts" class="btn">Explore Scripts</a>
+    </section>
+
+    <section class="scripts" id="scripts">
+        <h2>Available Scripts</h2>
+        <div class="categories-box" id="categories-box">
+            <!-- Kategoriene legges til dynamisk via JavaScript -->
+        </div>
+
+        <div id="scripts-list">
+            <!-- Skriptene legges til under kategori ved innsendelse -->
         </div>
     </section>
 
-    <!-- Scripts Section -->
-    <section id="scripts" class="scripts">
-        <div class="container">
-            <h2>Our Scripts</h2>
+    <div id="post-script" class="post-script">
+        <h2>Post Your Script</h2>
+        <form id="post-form">
+            <label for="category-select">Category:</label>
+            <select id="category-select" required>
+                <option value="Cars">Cars</option>
+                <option value="MLOs">MLOs</option>
+                <option value="Scripts">Scripts</option>
+                <option value="Clothes">Clothes</option>
+            </select>
+            <label for="post-title">Title:</label>
+            <input type="text" id="post-title" required>
+            <label for="post-description">Description:</label>
+            <textarea id="post-description" required></textarea>
+            <label for="post-price">Price:</label>
+            <input type="number" id="post-price" required>
+            <button type="submit">Post Script</button>
+        </form>
+    </div>
 
-            <!-- Categories Box -->
-            <div class="categories-box">
-                <h3>Categories</h3>
-                <div class="categories">
-                    <div class="category" onclick="showCategory('cars')">Cars</div>
-                    <div class="category" onclick="showCategory('mlo')">MLOs</div>
-                    <div class="category" onclick="showCategory('scripts')">Scripts</div>
-                    <div class="category" onclick="showCategory('clothes')">Clothes</div>
-                </div>
-            </div>
-
-            <!-- Script List -->
-            <div id="script-list">
-                <!-- Scripts will dynamically load here -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Post Script Section (Visible only for users with accepted cfx.re identifier) -->
-    <section id="post-script" class="post-script hidden">
-        <div class="container">
-            <h2>Post Your Script</h2>
-            <form id="post-form">
-                <input type="text" name="price" placeholder="Price" required>
-                <input type="text" name="description" placeholder="Description" required>
-                <select name="category" required>
-                    <option value="cars">Cars</option>
-                    <option value="mlo">MLOs</option>
-                    <option value="scripts">Scripts</option>
-                    <option value="clothes">Clothes</option>
-                </select>
-                <input type="file" name="image" required>
-                <input type="file" name="file" required>
-                <button type="submit" class="btn">Post Script</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <form id="contact-form">
-                <input type="text" name="name" placeholder="Name" required>
-                <input type="email" name="email" placeholder="Email" required>
-                <textarea name="message" placeholder="Your message" required></textarea>
-                <button type="submit" class="btn">Send Message</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Footer Section -->
     <footer>
-        <div class="container">
-            <p>&copy; 2025 FiveM Scripts. All rights reserved.</p>
-        </div>
+        <p>&copy; 2025 FiveM Script Store</p>
     </footer>
 
     <script src="script.js"></script>
