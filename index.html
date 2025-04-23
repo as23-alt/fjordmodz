@@ -4,36 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FjordModz</title>
-    <link rel="stylesheet" href="style.css">  <!-- Koble til CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Logoen -->
+    <!-- Header med logo -->
     <header>
         <div id="logo">
             <img src="fjordmodz_logo.png" alt="FjordModz Logo">
         </div>
     </header>
 
-    <!-- Hovedinnhold -->
-    <section>
-        <h1>Welcome to FjordModz</h1>
-        <p>We create mods, MLOs, and more to enhance your server experience. Browse and find the scripts you need!</p>
-
+    <!-- Main Content Section -->
+    <main>
         <div class="categories">
-            <h2>Categories:</h2>
-            <ul>
-                <li>Vehicles</li>
-                <li>MLOs</li>
-                <li>Scripts</li>
-            </ul>
+            <h2>Categories</h2>
+            <div class="category-buttons">
+                <button class="category-btn">Vehicles</button>
+                <button class="category-btn">MLOs</button>
+                <button class="category-btn">Scripts</button>
+            </div>
         </div>
-    </section>
+
+        <section class="product-list">
+            <h2>Featured Products</h2>
+            <div class="product-item">
+                <img src="fjordmodz_logo.png" alt="Script Image">
+                <h3>Vehicle Script</h3>
+                <p>Price: $15</p>
+            </div>
+            <div class="product-item">
+                <img src="fjordmodz_logo.png" alt="Script Image">
+                <h3>Building MLO</h3>
+                <p>Price: $30</p>
+            </div>
+            <!-- Legg til flere produkter her -->
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer>
         <p>Contact us: <a href="mailto:itpdtimis@gmail.com">itpdtimis@gmail.com</a></p>
     </footer>
 
-    <script src="script.js"></script>  <!-- Koble til JS -->
+    <script src="script.js"></script>
 </body>
 </html>
