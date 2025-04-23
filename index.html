@@ -13,13 +13,77 @@
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Scripts</a></li>
+                <li><a href="#">Support</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FiveM Script Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo"><img src="logo.png" alt="Logo"></div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Scripts</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <section class="hero">
-        <h2>Welcome to the FiveM Script Store</h2>
+        <h2>Welcome to Fjordmodz!</h2>
+        <p>Browse and buy scripts for your FiveM server!</p>
+        <a href="#scripts" class="btn">Explore Scripts</a>
+    </section>
+
+    <section class="scripts" id="scripts">
+        <h2>Available Scripts</h2>
+        <div class="categories-box" id="categories-box">
+            <!-- Kategoriene legges til dynamisk via JavaScript -->
+        </div>
+
+        <div id="scripts-list">
+            <!-- Skriptene legges til under kategori ved innsendelse -->
+        </div>
+    </section>
+
+    <div id="post-script" class="post-script">
+        <h2>Post Your Script</h2>
+        <form id="post-form">
+            <label for="category-select">Category:</label>
+            <select id="category-select" required>
+                <option value="Cars">Cars</option>
+                <option value="MLOs">MLOs</option>
+                <option value="Scripts">Scripts</option>
+                <option value="Clothes">Clothes</option>
+            </select>
+            <label for="post-title">Title:</label>
+            <input type="text" id="post-title" required>
+            <label for="post-description">Description:</label>
+            <textarea id="post-description" required></textarea>
+            <label for="post-price">Price:</label>
+            <input type="number" id="post-price" required>
+            <button type="submit">Post Script</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 FiveM Script Store</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+</h2>
         <p>Browse and buy scripts for your FiveM server!</p>
         <a href="#scripts" class="btn">Explore Scripts</a>
     </section>
