@@ -42,7 +42,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const postTitle = document.getElementById('post-title').value;
         const postDescription = document.getElementById('post-description').value;
         const postPrice = document.getElementById('post-price').value;
-        const postImageUrl = document.getElementById('post-image-url').value;
 
         // Lag et nytt innlegg og vis det i riktig kategori
         const postElement = document.createElement('div');
@@ -51,7 +50,6 @@ document.addEventListener('DOMContentLoaded', function() {
             <h3>${postTitle}</h3>
             <p>${postDescription}</p>
             <p>Price: $${postPrice}</p>
-            <img src="${postImageUrl}" alt="Image" style="max-width: 100px;">
             <button class="buy-btn" onclick="window.location.href='https://discord.gg/VCdPuqbZdQ'">Buy Now</button>
         `;
 
@@ -82,4 +80,5 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
+
 
