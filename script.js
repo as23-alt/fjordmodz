@@ -1,10 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Fake cfx.re identifier for testing
+    // Fake cfx.re identifier for testing (Replace with actual cfx.re login mechanism later)
     const allowedIdentifiers = ['abc123', 'xyz456']; // Add real identifiers here
     const currentIdentifier = 'abc123'; // Replace with real cfx.re ID
 
     const postSection = document.getElementById('post-script');
-    const postButton = document.getElementById('post-form');
     
     // Show the "Post" section only if the user is allowed
     if (allowedIdentifiers.includes(currentIdentifier)) {
