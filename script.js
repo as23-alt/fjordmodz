@@ -27,3 +27,4 @@ function showCategory(category) {
     const scripts = document.getElementById('script-list');
     scripts.innerHTML = `<h3>Scripts in ${category}</h3><p>List of scripts for ${category} will appear here.</p>`;
 }
+
