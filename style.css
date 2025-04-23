@@ -1,1 +1,48 @@
-body { font-family: sans-serif; background: #f4f4f4; }
+/* Generelle stilinnstillinger */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    padding: 20px;
+    text-align: center;
+}
+
+header #logo img {
+    width: 100px;
+}
+
+h1 {
+    color: #2d2d2d;
+    text-align: center;
+}
+
+.categories {
+    text-align: center;
+    margin: 20px;
+}
+
+.categories ul {
+    list-style: none;
+    padding: 0;
+}
+
+.categories li {
+    margin: 10px;
+    font-size: 18px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
