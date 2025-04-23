@@ -1,42 +1,102 @@
-/* Generelle stilinnstillinger */
-body {
-    font-family: Arial, sans-serif;
+/* Generelle stiler */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
     color: #333;
 }
 
+/* Header med logo */
 header {
     background-color: #333;
     padding: 20px;
-    text-align: center;
+    text-align: left;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
 header #logo img {
-    width: 100px;
+    width: 150px;
 }
 
-h1 {
-    color: #2d2d2d;
-    text-align: center;
+/* Main Content */
+main {
+    margin-top: 100px; /* For å unngå at innholdet er skjult bak headeren */
+    padding: 20px;
 }
 
 .categories {
     text-align: center;
-    margin: 20px;
+    margin-bottom: 40px;
 }
 
-.categories ul {
-    list-style: none;
-    padding: 0;
+.category-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
-.categories li {
-    margin: 10px;
+.category-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.category-btn:hover {
+    background-color: #555;
+}
+
+/* Produktseksjon */
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    text-align: center;
+}
+
+.product-item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.product-item img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.product-item h3 {
     font-size: 18px;
+    margin-bottom: 10px;
 }
 
+.product-item p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Footer */
 footer {
     background-color: #333;
     color: white;
