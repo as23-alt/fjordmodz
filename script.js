@@ -1,28 +1,36 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Mock for å simulere innlogging
-    const currentIdentifier = 'abc123';  // Denne skal settes til den innloggede cfx.re ID-en via API-et
+    const currentIdentifier = 'abc123';  // Denne ID-en skal settes fra autentisering via cfx.re
 
-    // Les inn autoriserte identifikatorer
+    // Les inn autoriserte identifikatorer fra filen
     fetch('allowed_identifiers.txt')
         .then(response => response.text())
         .then(data => {
             const allowedIdentifiers = data.split('\n').map(line => line.trim());
-            
-            // Sjekk om den nåværende ID-en er i listen over autoriserte brukere
+
+            // Hvis den nåværende cfx.re ID er i listen over autoriserte brukere, vis post-seksjonen
             if (allowedIdentifiers.includes(currentIdentifier)) {
-                // Hvis brukeren er autorisert, vis post-seksjonen
                 document.getElementById('post-script').classList.add('visible');
             } else {
-                // Hvis ikke autorisert, skjul post-seksjonen
                 document.getElementById('post-script').classList.remove('visible');
             }
         });
 
-    // Håndtere innsendelse av postformular
+    // Dynamisk opprettelse av kategorier
+    const categories = ['Cars', 'MLOs', 'Scripts', 'Clothes'];
+    const categoriesBox = document.getElementById('categories-box');
+    categories.forEach(category => {
+        let categoryDiv = document.createElement('div');
+        categoryDiv.classList.add('category');
+        categoryDiv.innerHTML = `<p>${category}</p>`;
+        categoryDiv.addEventListener('click', () => showCategory(category));
+        categoriesBox.appendChild(categoryDiv);
+    });
+
+    // Når et innlegg er sendt
     document.getElementById('post-form').addEventListener('submit', function(e) {
         e.preventDefault();
 
-        // Hent data fra skjemaet
         const postCategory = document.getElementById('category-select').value;
         const postTitle = document.getElementById('post-title').value;
         const postDescription = document.getElementById('post-description').value;
@@ -45,17 +53,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         alert('Script posted successfully!');
-    });
-
-    // Dynamisk opprettelse av kategorier
-    const categories = ['Cars', 'MLOs', 'Scripts', 'Clothes'];
-    const categoriesBox = document.getElementById('categories-box');
-    categories.forEach(category => {
-        let categoryDiv = document.createElement('div');
-        categoryDiv.classList.add('category');
-        categoryDiv.innerHTML = `<p>${category}</p>`;
-        categoryDiv.addEventListener('click', () => showCategory(category));
-        categoriesBox.appendChild(categoryDiv);
     });
 
     // Vis kategorier
