@@ -1,14 +1,30 @@
-// JavaScript for form validation or other dynamic content (if needed)
-document.addEventListener('DOMContentLoaded', function () {
-    const form = document.querySelector('form');
-    form.addEventListener('submit', function (e) {
-        const name = form.querySelector('input[name="name"]');
-        const email = form.querySelector('input[name="email"]');
-        const message = form.querySelector('textarea[name="message"]');
+document.addEventListener('DOMContentLoaded', function() {
+    // Fake cfx.re identifier for testing
+    const allowedIdentifiers = ['abc123', 'xyz456']; // Add real identifiers here
+    const currentIdentifier = 'abc123'; // Replace with real cfx.re ID
 
-        if (!name.value || !email.value || !message.value) {
-            alert("Alle feltene må fylles ut.");
-            e.preventDefault();
-        }
+    const postSection = document.getElementById('post-script');
+    const postButton = document.getElementById('post-form');
+    
+    // Show the "Post" section only if the user is allowed
+    if (allowedIdentifiers.includes(currentIdentifier)) {
+        postSection.classList.add('visible');
+    }
+
+    // Handle contact form submission
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Message sent!');
+    });
+
+    // Handle post script form submission
+    document.getElementById('post-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Script posted!');
     });
 });
+
+function showCategory(category) {
+    const scripts = document.getElementById('script-list');
+    scripts.innerHTML = `<h3>Scripts in ${category}</h3><p>List of scripts for ${category} will appear here.</p>`;
+}
