@@ -79,6 +79,31 @@ document.addEventListener('DOMContentLoaded', function() {
             scripts.appendChild(categoryElement);
         }
     }
+    <!-- Post form for new script -->
+<form id="post-form">
+    <label for="post-title">Title (e.g. Vehicle Name):</label>
+    <input type="text" id="post-title" required>
+
+    <label for="post-description">Description (e.g. Vehicle Description):</label>
+    <textarea id="post-description" required></textarea>
+
+    <label for="post-price">Price:</label>
+    <input type="number" id="post-price" required>
+
+    <label for="category-select">Category:</label>
+    <select id="category-select" required>
+        <option value="Cars">Cars</option>
+        <option value="MLOs">MLOs</option>
+        <option value="Scripts">Scripts</option>
+        <option value="Clothes">Clothes</option>
+    </select>
+
+    <label for="post-image-url">Image URL (optional):</label>
+    <input type="text" id="post-image-url">
+
+    <button type="submit">Post Script</button>
+</form>
+
 });
 
 
